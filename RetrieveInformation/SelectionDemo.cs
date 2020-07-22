@@ -48,7 +48,8 @@ namespace RetrieveInformation
     {
         public bool AllowElement(Element elem)
         {
-            if (elem.Category.Id.IntegerValue == (int)BuiltInCategory.OST_Doors)
+            var value=elem?.Category?.Id?.IntegerValue;
+            if (value == (int)BuiltInCategory.OST_Doors)
                 return true;
             else return false;
         }
